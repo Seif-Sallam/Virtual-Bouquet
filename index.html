@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Bouquet Just for You</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cursive', 'Comic Sans MS', Arial, sans-serif;
+      background: linear-gradient(to right, #fceabb, #f8b500);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+    }
+    .container {
+      text-align: center;
+      background: rgba(255, 182, 193, 0.2);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    .flowers {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .flower {
+      background: rgba(255,255,255,0.3);
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5em;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }    .flower:hover {
+      transform: scale(1.1);
+      background: rgba(255,255,255,0.5);
+    }
+    .baby-blue {
+      background: linear-gradient(135deg, #add8e6, #87ceeb, #b0e0e6) !important;
+      box-shadow: 0 4px 15px rgba(173, 216, 230, 0.4);
+      border: 2px solid rgba(135, 206, 235, 0.3);
+    }
+    .baby-blue:hover {
+      background: linear-gradient(135deg, #87ceeb, #add8e6, #b0e0e6) !important;
+      transform: scale(1.15);
+      box-shadow: 0 6px 20px rgba(173, 216, 230, 0.6);
+    }    .message {
+      margin-top: 20px;
+      font-size: 1.5em;
+      min-height: 40px;
+      transition: opacity 0.3s;
+    }
+    .side-food {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.3);
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .side-food:hover {
+      transform: translateY(-50%) scale(1.2);
+      background: rgba(255,255,255,0.5);
+    }
+    .sushi {
+      left: 20px;
+    }
+    .pizza {
+      right: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Side food items -->
+  <div class="side-food sushi" onclick="showMessage('Here is your sushi because you love it as well! 🍣')">🍣</div>
+  <div class="side-food pizza" onclick="showMessage('Here is your pizza because you love it as well! 🍕')">🍕</div>
+
+  <div class="container" style="max-width:500px;">
+    <h1>A Bouquet Just for You</h1>
+    <div class="flowers">
+      <div class="flower" onclick="showMessage('This rose is for your beautiful smile!')">🌹</div>
+      <div class="flower" onclick="showMessage('A daisy, because you brighten my day!')">🌼</div>
+      <div class="flower" onclick="showMessage('A tulip, just like your elegance!')">🌷</div>
+      <div class="flower" onclick="showMessage('A sunflower, for your warmth and light!')">🌻</div>
+      <div class="flower" onclick="showMessage('A hibiscus for your tropical beauty!')">🌺</div>
+      <div class="flower" onclick="showMessage('Cherry blossoms for new beginnings with you!')">🌸</div>
+      <div class="flower" onclick="showMessage('Lavender for sweet dreams and relaxation!')">💜</div>
+      <div class="flower" onclick="showMessage('A white rose for pure love!')">🤍</div>
+      <div class="flower baby-blue" onclick="showMessage('Baby blue delphiniums reaching for the sky like my love for you! 💙')">💙</div>
+      <div class="flower baby-blue" onclick="showMessage('Baby blue hydrangeas, soft and sweet like you! 💙')">💠</div>
+      <div class="flower baby-blue" onclick="showMessage('Forget-me-nots in baby blue, so I never forget you! 💙')">🌸</div>
+      <div class="flower baby-blue" onclick="showMessage('Baby blue morning glories to start each day thinking of you! 💙')">🌀</div>
+      <div class="flower" onclick="showMessage('A peony for honor and wealth in our love!')">🌸</div>
+      <div class="flower" onclick="showMessage('An orchid for your exotic beauty!')">🌺</div>
+      <div class="flower" onclick="showMessage('A carnation for fascination and distinction!')">🌸</div>
+    </div>
+    <div class="message" id="message"></div>
+  </div>
+  <script>
+    function showMessage(text) {
+      const msg = document.getElementById('message');
+      msg.style.opacity = 0;
+      setTimeout(() => {
+        msg.textContent = text;
+        msg.style.opacity = 1;
+      }, 300);
+    }
+  </script>
+</body>
+</html>
